@@ -20,7 +20,8 @@ set :npm, "/home/#{user}/.nvm/v#{node_version}/bin/npm"
 
 set :node_env, 'production'
 
-set :log_file, "/home/#{user}/logs/#{application}.log"
+set :log_dir, "/home/#{user}/logs"
+set :log_file, "#{log_dir}/#{application}.log"
 
 default_run_options[:pty] = true
 
@@ -45,6 +46,11 @@ namespace :deploy do
   desc "create deployment directory"
   task :create_deploy_to, :roles => :app do
     run "mkdir -p #{deploy_to}"
+  end
+
+  desc "create log directory"
+  task :create_deploy_to, :roles => :app do
+    run "mkdir -p #{log_dir}"
   end
   
   desc "writes the upstart script for running the daemon. Customice to your needs"
