@@ -127,4 +127,4 @@ end
 before 'deploy:setup', 'deploy:create_deploy_to', 'node:install_nvm', 'node:install_node_version'
 after 'deploy:setup', 'node_modules:create_dir', 'db:create_dir', 'deploy:write_upstart_script'
 
-after "deploy:finalize_update", "node_modules:symlink", "db:symlink", "deploy:update_submodules", "deploy:update_packages"
+after "deploy:finalize_update", "node_modules:symlink", "db:symlink", "deploy:update_packages"
