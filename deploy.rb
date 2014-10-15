@@ -67,7 +67,7 @@ namespace :deploy do
 
       exec sudo -u #{admin_runner} sh -c "\
       NODE_ENV=#{node_env} PORT=#{application_port} \
-      #{node_bin} #{current_path}/#{node_file} \
+      #{npm} start \
       >> #{log_file} 2>&1"
   end script
   respawn
