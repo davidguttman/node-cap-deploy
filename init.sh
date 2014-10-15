@@ -1,5 +1,6 @@
 #!/bin/bash
 
+capify .
 mkdir -p config
 curl https://raw.githubusercontent.com/davidguttman/node-cap-deploy/master/deploy.rb > config/deploy.rb
 curl https://raw.githubusercontent.com/davidguttman/node-cap-deploy/master/opts.rb > config/opts.rb
